@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="<%= request.getContextPath() %>/js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+
+    $("#menu ul li a").click(function(e){
+
+        $("#menu ul li a").removeClass("selected");
+        }).click (function(){
+
+            $(this).addClass("selected");
+            });
+
+
+        $("#menu ul li a").mouseenter(function(){
+            $("#menu ul li ul").slideToggle("fast");
+
+            });     
+
+});
+</script>
+
+<style type="text/css">
+body{
+    margin:0px;
+    padding:0px;
+}
+.selected{
+background:#CCC;
+}
+#menu{
+width:500px;
+height:70px;
+margin:40px auto;
+border:1px solid black;
+border-radius:5px;
+}
+#menu ul{
+list-style:none;
+position:relative;
+}
+#menu ul li{
+float:left;
+position:relative;
+width:100px;
+text-align:center;
+}
+#menu ul li a{
+text-decoration:none;
+display:block;
+background:black;
+color:white;
+padding:10px 30px;
+line-height:30px;
+}
+
+#menu ul li ul{
+display:none;
+visibility:hidden;
+opacity:0;
+position:absolute;  
+top:50px;
+left:0px;
+padding:0;
+width:150px;    
+}
+#menu ul li a:hover, #menu ul li .selected{
+background:gray;
+    color:white;
+}
+
+
+#menu ul li ul li{
+    list-style:none;
+    width:100%;
+    text-align:left;
+    position:relative;
+}
+
+#menu ul li:hover ul {
+    visibility:visible;
+    display:block;
+    opacity:1;
+    width:150px;
+}
+</style>
+</head>
+<body>
+
+    <div id="menu">
+        <ul>
+            <li><a href="#">Home</a></li>``
+            <li><a href="#">About</a>
+                <ul>
+
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Tell</a></li>   
+                    <li><a href="#">Contact</a></li> 
+
+                </ul>
+            </li>
+            <li><a href="#" class="selected">Contact</a></li>
+            <li><a href="#">Tell</a>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Tell</a></li>   
+                    <li><a href="#">Contact</a></li> 
+                </ul>``
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+</html>
